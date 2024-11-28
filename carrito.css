@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Titillium+Web:wght@200;300;400;600;700&display=swap');
+.toast {
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff4d4d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    z-index: 1000;
+}
+.toast.show {
+    opacity: 1;
+}
+
+
+/* seccion carrito */
+.carrito {
+    border: 1px solid #666;
+    width: 30%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    background-color: #555;
+    opacity: 0;
+    transform: translateX(100%); /* Oculto a la derecha */
+    z-index: 1000;
+}
+
+.carrito.mostrar {
+    transform: translateX(0);  /* Muestra el carrito al moverlo a la posición original */
+    opacity: 1;  /* Hace el carrito visible */
+}
+.carrito-cerrar {
+    background: none;
+    border: none;
+    font-size: 50px;
+    cursor: pointer;
+    color: white;
+}
+.carrito-cerrar:hover {
+    color: white;
+}
+.carrito .header-carrito {
+    background-color: #000;
+    color: #fff;
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.carrito .header-carrito button{
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+.carrito-items {
+    max-height: 400px; /* Ajusta la altura máxima según lo que necesites */
+    overflow-y: auto; /* Habilita el desplazamiento vertical */
+    /*padding-right: 60px; /* Añadir un poco de espacio a la derecha para evitar que se tapen los elementos */
+    font-size: 15px;
+    background-color: white;
+    color: #000;
+}
+
+.carrito .carrito-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid #666;
+    padding: 10px;
+}
+
+.carrito .carrito-item img {
+    margin-right: 20px;
+}
+
+.carrito .carrito-item .carrito-item-titulo {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.carrito .carrito-item .selector-cantidad {
+    display: inline-block;
+    margin-right: 25px;
+}
+
+.carrito .carrito-item .carrito-item-cantidad {
+    border: none;
+    font-size: 18px;
+    background-color: transparent;
+    display: inline-block;
+    width: 30px;
+    padding: 5px;
+    text-align: center;
+}
+
+.carrito .carrito-item .selector-cantidad i {
+    font-size: 18px;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.carrito .carrito-item .carrito-item-precio {
+    font-weight: bold;
+    display: inline-block;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.carrito .carrito-item .btn-eliminar {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    color: #000;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #000;
+    cursor: pointer;
+    display: block;
+    background: transparent;
+    z-index: 20;
+}
+
+.carrito .carrito-item .btn-eliminar i {
+    pointer-events: none;
+}
+
+.carrito-total {
+    background-color: #f3f3f3;
+    padding: 30px;
+}
+
+.carrito-total .fila {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.carrito-total .btn-pagar {
+    display: block;
+    width: 100%;
+    border: none;
+    background: #000;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.carrito-total .btn-pagar:hover {
+    scale: 1.05;
+}
+
+/* SECCION RESPONSIVE */
+@media screen and (max-width: 850px) {
+    .contenedor {
+        display: block;
+    }
+    .contenedor-items {
+        width: 100% !important;
+    }
+    .carrito {
+        width: 100%;
+    }
+}
